@@ -1,0 +1,60 @@
+from flask import Flask, redirect,request,send_file,jsonify
+from flask_cors import CORS
+from datetime import date,datetime
+import xml.etree.ElementTree as xml
+from lxml import etree
+import json
+import os
+
+profileCollectionVersion = "1.0"
+profileVersion = "1.0"
+description = "This is Profile Collection v1.0"
+app = Flask(__name__,static_folder="static")
+CORS(app)
+
+@app.route('/',methods=['GET'])
+def index():
+    return 'Index Page'
+
+@app.route('/',methods=['POST'])
+def JSONtoXML():
+    json_data = json.loads(request.data)
+    createddate = str(date.today())
+    now = datetime.now()
+    timestamp = str(datetime.timestamp(now)).split('.')[0]
+    root = etree.Element("profilecollection")
+    root.set('version','1.0')
+
+    L1Element = etree.Element("profile")
+    L1Element.set('version',profileVersion)
+    L1Element.set('name',"SampleProfile")
+    L1Element.set('createddate',createddate)
+    root.append(L1Element)
+
+    L2Element_1 = etree.SubElement(L1Element, "description")
+    L2Element_1.text = description
+    L2Element_2 = etree.SubElement(L1Element,"variablecollection")
+
+    for profile in json_data:
+        L3Element = etree.SubElement(L2Element_2,"variable")
+        L3Element.set('name',profile['variableName'])
+        L3Element.set('category',profile['category'])
+        L4Element = etree.SubElement(L3Element,'value')
+        if(profile['selectedValue']):
+            L4Element.text = profile['selectedValue']
+        else:
+            L4Element.text = profile['value']
+    
+    tree = etree.ElementTree(root)
+    if(not os.path.exists("./upload")):
+        os.makedirs("./upload")
+    filename = "./upload/"+timestamp+".xml"
+    tree.write(filename,pretty_print=True)
+    return filename
+
+@app.route('/xml/<path:filename>')
+def download(filename):
+    return send_file(filename,as_attachment=True)
+
+if __name__ == "__main__":
+    app.run(port=8000,debug=True)
