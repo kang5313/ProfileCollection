@@ -1,0 +1,61 @@
+<profilecollection version="1.0">
+  <profile version="1.0" name="SampleProfile" createddate="2019-05-17">
+    <description>This is Profile Collection v1.0</description>
+    <variablecollection>
+      <variable name="TestFacilityName" category="Settings">
+        <value>kimSim</value>
+      </variable>
+      <variable name="ProdSys.DefaultPlatform" category="Settings">
+        <value>x64</value>
+      </variable>
+      <variable name="VisualStudio.ProjectTemplatesDir" category="Library">
+        <value>techFlow3/bin/lib/vslib</value>
+      </variable>
+      <variable name="VisualStudio.DefaultProjectTemplate.Cpp" category="Settings">
+        <value>Default</value>
+      </variable>
+      <variable name="VisualStudio.PreferredIDE.Cpp" category="Settings">
+        <value>vs80</value>
+      </variable>
+      <variable name="techFlow.Settings" category="Settings">
+        <value>Profile</value>
+      </variable>
+      <variable name="ProdSys.EDReplacement" category="Settings">
+        <value>Profile</value>
+      </variable>
+      <variable name="techFlow.Test.LimitInheritResultPrefix" category="Settings">
+        <value>Inherit</value>
+      </variable>
+      <variable name="techFlow.Test.LimitInheritResultPrefix.IfParentNotFound" category="Settings">
+        <value>False</value>
+      </variable>
+      <variable name="techFlow.Test.ShowTestNumber" category="Settings">
+        <value>Inherit</value>
+      </variable>
+      <variable name="techFlow.Test.ShowTestNumber.IfParentNotFound" category="Settings">
+        <value>False</value>
+      </variable>
+      <variable name="techFlow.Test.TestNumberMode" category="Settings">
+        <value>Classic</value>
+      </variable>
+      <variable name="techFlow.Test.TestNumberMode.IfParentNotFound" category="Settings">
+        <value>Classic</value>
+      </variable>
+      <variable name="techFlow.Test.GradingTestShareTestNumber" category="Settings">
+        <value>Inherit</value>
+      </variable>
+      <variable name="techFlow.Test.GradingTestShareTestNumber.IfParentNotFound" category="Settings">
+        <value>False</value>
+      </variable>
+      <variable name="Launcher.ShowRTDP" category="Settings">
+        <value>True</value>
+      </variable>
+      <variable name="Launcher.ShowProjectHistory" category="Settings">
+        <value>HideIfRTDP</value>
+      </variable>
+      <variable name="SiteGroup.IncludeExcludeDUTBasedOnCommitResult" category="Settings">
+        <value>True</value>
+      </variable>
+    </variablecollection>
+  </profile>
+</profilecollection>
