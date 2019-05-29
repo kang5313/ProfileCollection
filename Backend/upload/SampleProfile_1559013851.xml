@@ -1,0 +1,49 @@
+<profilecollection version="1.0">
+  <profile version="1.0" name="Testing_123" createddate="2019-05-28" selectedTechFlowVersion="3.6.1">
+    <description>This is Profile Collection v1.0</description>
+    <variablecollection>
+      <variable name="TestFacilityName" category="Settings">
+        <value>Try</value>
+      </variable>
+      <variable name="ProdSys.DefaultPlatform" category="Settings">
+        <value>x86</value>
+      </variable>
+      <variable name="VisualStudio.ProjectTemplatesDir" category="Library">
+        <value>techFlow3/bin/lib/vslib</value>
+      </variable>
+      <variable name="VisualStudio.DefaultProjectTemplate.Cpp" category="Settings">
+        <value>Default</value>
+      </variable>
+      <variable name="VisualStudio.PreferredIDE.Cpp" category="Settings">
+        <value>vc90</value>
+      </variable>
+      <variable name="techFlow.Settings" category="Settings">
+        <value>WinUserRoaming</value>
+      </variable>
+      <variable name="ProdSys.EDReplacement" category="Settings">
+        <value>Profile</value>
+      </variable>
+      <variable name="techFlow.Test.LimitInheritResultPrefix" category="Settings">
+        <value>Inherit</value>
+      </variable>
+      <variable name="techFlow.Test.LimitInheritResultPrefix.IfParentNotFound" category="Settings">
+        <value>False</value>
+      </variable>
+      <variable name="techFlow.Test.ShowTestNumber" category="Settings">
+        <value>Inherit</value>
+      </variable>
+      <variable name="techFlow.Test.ShowTestNumber.IfParentNotFound" category="Settings">
+        <value>False</value>
+      </variable>
+      <variable name="techFlow.Test.TestNumberMode" category="Settings">
+        <value>Inherit</value>
+      </variable>
+      <variable name="techFlow.Test.TestNumberMode.IfParentNotFound" category="Settings">
+        <value>UserDefined</value>
+      </variable>
+      <variable name="techFlow.Test.GradingTestShareTestNumber" category="Settings">
+        <value>Inherit</value>
+      </variable>
+    </variablecollection>
+  </profile>
+</profilecollection>

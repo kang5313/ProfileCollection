@@ -27,20 +27,21 @@ def JSONtoXML():
 
     L1Element = etree.Element("profile")
     L1Element.set('version',profileVersion)
-    L1Element.set('name',"SampleProfile")
+    L1Element.set('name',json_data[2])
     L1Element.set('createddate',createddate)
+    L1Element.set('selectedTechFlowVersion',json_data[1])
     root.append(L1Element)
 
     L2Element_1 = etree.SubElement(L1Element, "description")
     L2Element_1.text = description
     L2Element_2 = etree.SubElement(L1Element,"variablecollection")
 
-    for profile in json_data:
+    for profile in json_data[0]:
         L3Element = etree.SubElement(L2Element_2,"variable")
         L3Element.set('name',profile['variableName'])
         L3Element.set('category',profile['category'])
         L4Element = etree.SubElement(L3Element,'value')
-        if(profile['selectedValue']):
+        if('selectedValue' in profile):
             L4Element.text = profile['selectedValue']
         else:
             L4Element.text = profile['value']
@@ -48,7 +49,7 @@ def JSONtoXML():
     tree = etree.ElementTree(root)
     if(not os.path.exists("./upload")):
         os.makedirs("./upload")
-    filename = "./upload/"+timestamp+".xml"
+    filename = "./upload/SampleProfile_"+timestamp+".xml"
     tree.write(filename,pretty_print=True)
     return filename
 

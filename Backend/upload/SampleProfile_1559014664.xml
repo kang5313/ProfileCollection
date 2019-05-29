@@ -1,9 +1,9 @@
 <profilecollection version="1.0">
-  <profile version="1.0" name="SampleProfile" createddate="2019-05-17">
+  <profile version="1.0" name="Testing_10" createddate="2019-05-28" selectedTechFlowVersion="3.6.1">
     <description>This is Profile Collection v1.0</description>
     <variablecollection>
       <variable name="TestFacilityName" category="Settings">
-        <value>kimSim</value>
+        <value>Aemulus</value>
       </variable>
       <variable name="ProdSys.DefaultPlatform" category="Settings">
         <value>x86</value>
@@ -24,10 +24,10 @@
         <value>Profile</value>
       </variable>
       <variable name="techFlow.Test.LimitInheritResultPrefix" category="Settings">
-        <value>True</value>
+        <value>Inherit</value>
       </variable>
       <variable name="techFlow.Test.LimitInheritResultPrefix.IfParentNotFound" category="Settings">
-        <value>True</value>
+        <value>False</value>
       </variable>
       <variable name="techFlow.Test.ShowTestNumber" category="Settings">
         <value>Inherit</value>
@@ -36,25 +36,13 @@
         <value>False</value>
       </variable>
       <variable name="techFlow.Test.TestNumberMode" category="Settings">
-        <value>Classic</value>
+        <value>Inherit</value>
       </variable>
       <variable name="techFlow.Test.TestNumberMode.IfParentNotFound" category="Settings">
         <value>UserDefined</value>
       </variable>
       <variable name="techFlow.Test.GradingTestShareTestNumber" category="Settings">
         <value>Inherit</value>
-      </variable>
-      <variable name="techFlow.Test.GradingTestShareTestNumber.IfParentNotFound" category="Settings">
-        <value>False</value>
-      </variable>
-      <variable name="Launcher.ShowRTDP" category="Settings">
-        <value>True</value>
-      </variable>
-      <variable name="Launcher.ShowProjectHistory" category="Settings">
-        <value>Hide</value>
-      </variable>
-      <variable name="SiteGroup.IncludeExcludeDUTBasedOnCommitResult" category="Settings">
-        <value>True</value>
       </variable>
     </variablecollection>
   </profile>
