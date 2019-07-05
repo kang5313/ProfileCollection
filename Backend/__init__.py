@@ -42,14 +42,18 @@ def JSONtoXML():
         L3Element.set('category',profile['category'])
         L4Element = etree.SubElement(L3Element,'value')
         if('selectedValue' in profile):
-            L4Element.text = profile['selectedValue']
+            if(isinstance(profile['selectedValue'],list)):
+                multipleSelectedValue = ",".join(profile['selectedValue'])
+                L4Element.text=multipleSelectedValue
+            else:
+                L4Element.text = profile['selectedValue']
         else:
             L4Element.text = profile['value']
     
     tree = etree.ElementTree(root)
     if(not os.path.exists("./upload")):
         os.makedirs("./upload")
-    filename = "./upload/SampleProfile_"+timestamp+".xml"
+    filename = "./upload/SampleProfile_"+timestamp+".tprof"
     tree.write(filename,pretty_print=True)
     return filename
 
