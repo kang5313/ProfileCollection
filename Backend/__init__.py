@@ -1,4 +1,4 @@
-from flask import Flask, redirect,request,send_file,jsonify
+from flask import Flask, redirect,request,send_file,jsonify,render_template
 from flask_cors import CORS
 from datetime import date,datetime
 import xml.etree.ElementTree as xml
@@ -9,12 +9,12 @@ import os
 profileCollectionVersion = "1.0"
 profileVersion = "1.0"
 description = "This is Profile Collection v1.0"
-app = Flask(__name__,static_folder="static")
+app = Flask(__name__,static_folder="build/static",template_folder="build")
 CORS(app)
 
 @app.route('/',methods=['GET'])
 def index():
-    return 'Index Page'
+    return render_template('index.html')
 
 @app.route('/',methods=['POST'])
 def JSONtoXML():
