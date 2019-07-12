@@ -3,6 +3,7 @@ from flask_cors import CORS
 from datetime import date,datetime
 import xml.etree.ElementTree as xml
 from lxml import etree
+import time as mod_time
 import json
 import os
 
@@ -14,14 +15,14 @@ CORS(app)
 
 @app.route('/',methods=['GET'])
 def index():
-    return render_template('index.html')
+    return render_template("index.html")
 
 @app.route('/',methods=['POST'])
 def JSONtoXML():
     json_data = json.loads(request.data)
     createddate = str(date.today())
     now = datetime.now()
-    timestamp = str(datetime.timestamp(now)).split('.')[0]
+    timestamp = str((mod_time.mktime(now.timetuple())+now.microsecond/1000000.0))
     root = etree.Element("profilecollection")
     root.set('version','1.0')
 
